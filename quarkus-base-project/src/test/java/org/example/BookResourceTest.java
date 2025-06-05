@@ -6,12 +6,12 @@ import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 
 @QuarkusTest
-public class GreetingResourceTest {
+public class BookResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
-        RestAssured.get("/hello").then()
+    public void testListBooksEndpoint() {
+        RestAssured.get("/books").then()
                 .statusCode(200)
-                .body(CoreMatchers.is("Hello from Quarkus"));
+                .body(CoreMatchers.is("[]"));
     }
 }
